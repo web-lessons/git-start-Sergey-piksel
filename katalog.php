@@ -1,4 +1,12 @@
 <?php 
+    phpinfo();
+
+    require_once "config/db.php";
+    require_once "tamplate/header.php";
+?>
+
+
+<?php 
 $name = array('OnePlus 7T', 'OnePlus 7T Pro', 'OnePlus 7 Pro', 'OnePlus 7');
 
 $haracteristiki = array('Основные параметры:
@@ -39,62 +47,81 @@ $haracteristiki = array('Основные параметры:
 $price = array('BUY (600 $)', 'BUY (700 $)', 'BUY (650$)', 'BUY (500 $)');
 
 ?>
+<?php
+$products = array(
+      1 => array(
+          "name" => 'OnePlus 7T',
+          "img" => 'https://pood.telia.ee/staticCDN/tooted2/49831/215037/OnePlus%207T%20mobiiltelefon%20sinine%20tagant%20kuljelt.jpg',
+          "haract" => 'Основные параметры:
+          Экран Super AMOLED,1440 x 3120 (Wide QHD+), 6.67″, ~515 ppi;
+          Процессор Qualcomm Snapdragon 855+ (SM8150-AC) Octa core;
+          Память ОЗУ: 8 Gb/12 Gb, Flash: 128 Gb/256 Gb;
+          Аккумулятор 4500 мА·ч;
+          ОС Android 9.0 Pie;
+          Размеры 162.6 x 75.9 x 8.8 мм',
+          "price" => 'BUY (600 $)',
+      );
+      2 => array(
+        "name" => 'OnePlus 7T',
+        "img" => 'https://pood.telia.ee/staticCDN/tooted2/49831/215037/OnePlus%207T%20mobiiltelefon%20sinine%20tagant%20kuljelt.jpg',
+        "haract" => 'Основные параметры:
+        Экран Super AMOLED,1440 x 3120 (Wide QHD+), 6.67″, ~515 ppi;
+        Процессор Qualcomm Snapdragon 855+ (SM8150-AC) Octa core;
+        Память ОЗУ: 8 Gb/12 Gb, Flash: 128 Gb/256 Gb;
+        Аккумулятор 4500 мА·ч;
+        ОС Android 9.0 Pie;
+        Размеры 162.6 x 75.9 x 8.8 мм',
+        "price" => 'BUY (600 $)',
+      )
+      3 => array(
+        "name" => 'OnePlus 7T',
+        "img" => 'https://pood.telia.ee/staticCDN/tooted2/49831/215037/OnePlus%207T%20mobiiltelefon%20sinine%20tagant%20kuljelt.jpg',
+        "haract" => 'Основные параметры:
+        Экран Super AMOLED,1440 x 3120 (Wide QHD+), 6.67″, ~515 ppi;
+        Процессор Qualcomm Snapdragon 855+ (SM8150-AC) Octa core;
+        Память ОЗУ: 8 Gb/12 Gb, Flash: 128 Gb/256 Gb;
+        Аккумулятор 4500 мА·ч;
+        ОС Android 9.0 Pie;
+        Размеры 162.6 x 75.9 x 8.8 мм',
+        "price" => 'BUY (600 $)',
+      )
+      4 => array(
+        "name" => 'OnePlus 7T',
+        "img" => 'https://pood.telia.ee/staticCDN/tooted2/49831/215037/OnePlus%207T%20mobiiltelefon%20sinine%20tagant%20kuljelt.jpg',
+        "haract" => 'Основные параметры:
+        Экран Super AMOLED,1440 x 3120 (Wide QHD+), 6.67″, ~515 ppi;
+        Процессор Qualcomm Snapdragon 855+ (SM8150-AC) Octa core;
+        Память ОЗУ: 8 Gb/12 Gb, Flash: 128 Gb/256 Gb;
+        Аккумулятор 4500 мА·ч;
+        ОС Android 9.0 Pie;
+        Размеры 162.6 x 75.9 x 8.8 мм',
+        "price" => 'BUY (600 $)',
+      )
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
-<body>
+
+    );
+?>
+
+
+<?php 
+    require_once "tamplate/header.php";
+?>
+
     <div class="container">
+    <? foreach ($products as $key => $products) ?>
     <h1 class="center">Каталог:</h1>
     <div class="center">
     <div class="card" style="width: 50rem;">
-        <img src="https://pood.telia.ee/staticCDN/tooted2/49831/215037/OnePlus%207T%20mobiiltelefon%20sinine%20tagant%20kuljelt.jpg" class="card-img-top" alt="...">
+        <img src="<? $products['img'] ?>" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title text"><?php echo($name[0]);?></h5>
+            <h5 class="card-title text"><? $products['']?></h5>
             <p class="card-text"><?php echo($haracteristiki[0]); ?></p>
             <a href="" class="btn btn-primary"><?php echo($price[0]); ?></a>
         </div>
     </div>
 </div>
+<? endforeach ?>
 
-<div class="center">
-    <div class="card" style="width: 50rem;">
-        <img src="https://static-eu.insales.ru/images/products/1/3507/262827443/oneplus-7t-pro7677147338145424151.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title"><?php echo($name[1]); ?></h5>
-            <p class="card-text"><?php echo($haracteristiki[1]);?></p>
-            <a href="#" class="btn btn-primary"><?php echo ($price[1]);?></a>
-        </div>
-    </div>
-</div>
-
-    <div class="center">
-    <div class="card" style="width: 50rem;">
-        <img src="https://ae01.alicdn.com/kf/H5fc21b4deb3547f18550ea7f87e9065cl/OnePlus-7-Pro-Global-rom-4G-256GB-Snapdragon-855-48-6-67-Fluid.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title"><?php echo( $name[2]);?></h5>
-            <p class="card-text"><?php echo($haracteristiki[2]);?></p>
-            <a href="#" class="btn btn-primary"><?php echo($price[2]);?></a>
-        </div>
-    </div>
-</div>
-
-    <div class="center">
-    <div class="card" style="width: 50rem;">
-        <img src="https://05.ru/upload/iblock/827/8273b1bd2004a0ba71bcaff3ce7132b3.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title"><?php echo( $name[3]);?></h5>
-            <p class="card-text"><?php echo($haracteristiki[3]);?></p>
-            <a href="#" class="btn btn-primary"><?php echo($price[3]);?></a>
-        </div>
-    </div>
-</div>
 </div>
 
 </body>

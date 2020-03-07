@@ -1,11 +1,12 @@
 <?php 
-    phpinfo();
 
     require_once "config/db.php";
     require_once "tamplate/header.php";
 
-    $query = "SELEST *  FROM `products`";
-    $result = $mysqli->query($query);  //функция
+    $query = "SELECT *  FROM `products`";
+    $result = mysqli_query($conn, $query);
+    $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    print_r($products);
 
     var_dump($mysqli);
 ?>
@@ -42,7 +43,7 @@
       </div>
 
       <div class="center">
-      <a href="http://loc.local/katalog.php"><button type="button" class="btn btn-outline-light btn-lg">Перейти к каталогу</button></a>
+      <a href="http://s.loc/katalog.php"><button type="button" class="btn btn-outline-light btn-lg">Перейти к каталогу</button></a>
       </div>
 
       <?php 

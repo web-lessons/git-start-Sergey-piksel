@@ -2,12 +2,12 @@
 $host = "127.0.0.1";
 $login = "root";
 $password = "";
-$database = "products";
+$database = "shop";
 
 
-$mysqli = mysqli_connect($host, $login, $password);
+$conn = mysqli_connect($host, $login, $password, $database);
 
-if($mysqli->connect_error){
-    die('ТЫ ЛОХ');
+if(!$conn){
+    die('ошибка');
 }
 ?>
